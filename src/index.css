@@ -1,13 +1,108 @@
-body {
+/* Подключение шрифта Montserrat с разными весами */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Обнуление отступов и полей у всех элементов */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Стили для боковой панели (Sidebar) */
+.sidebar {
+  display: flex; 
+  align-items: center; 
+  border-bottom: 1px solid black; 
+  padding: 8px 16px; 
+}
+
+.sidebar button:not(:first-child) {
+  margin-left: 10px;
+}
+
+.btn {
+  display: inline-flex;
+}
+
+/* Стили для компонента Tree */
+.tree {
+  padding: 12px 20px; 
+}
+
+/* Стили для контейнера с линией и контентом задачи */
+.line {
+  border: 1px solid black; 
+  display: inline-flex; 
+  flex-direction: column; 
+  padding: 5px 8px;
+  position: relative;
+  margin-top: 10px;
+}
+
+/* Стили для каждой задачи в дереве (списке) */
+li {
+  position: relative;
+  padding-left: 20px; /* Внутренний отступ слева для вложенности */
+}
+
+/* Стили для вертикальной линии между уровнями */
+li::before {
+  content: ''; 
+  position: absolute; 
+  top: 7px; 
+  left: -10px; 
+  border-left: 1px solid black;
+  height: 18px; 
+}
+
+/* Стили для вертикальной линии между уровнями, кроме последнего элемента */
+li:not(:last-child):before {
+  height: calc(100% + 12px); 
+}
+
+/* Стили для горизонтальной линии под каждой задачей */
+li::after {
+  content: ''; 
+  position: absolute; 
+  top: 25px; 
+  left: -10px; 
+  border-top: 1px solid black; 
+  width: 20px; 
+}
+
+/* Стили для вертикальной линии между задачами */
+.vertical-line {
+  position: absolute; 
+  height: calc(100% + 12px); 
+  border-left: 1px solid black;
+  top: 14px; 
+  right: 100%; 
+  margin-right: 10px; 
+}
+
+/* Стили для контейнера с кнопкой "Развернуть/Свернуть" */
+.toggle {
+  z-index: 2; 
+  position: absolute; 
+  right: 100%;
+  margin-right: 3px; 
+  top: 5px; 
+}
+
+/* Стили для кнопки "Развернуть/Свернуть" */
+.toggle button {
+  padding: 1px 4px; 
 }
