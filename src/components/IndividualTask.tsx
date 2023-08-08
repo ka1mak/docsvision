@@ -36,10 +36,8 @@ const IndividualTask: React.FC<IndividualTaskProps> = ({ task, renderTree, expan
   return (
     <li>
       <div className="line">
-        {/* Вертикальная линия (отображается, если у задачи есть дочерние задачи) */}
         {isOpen && <div className={tasksTreeItems.length ? "vertical-line" : ""} />}
 
-        {/* Кнопка для раскрытия/скрытия задачи (отображается, если у задачи есть дочерние задачи) */}
         {tasksTreeItems.length > 0 && (
           <div className="toggle">
             <Button onClick={handleToggleOpen}>
@@ -61,7 +59,6 @@ const IndividualTask: React.FC<IndividualTaskProps> = ({ task, renderTree, expan
         )}
       </div>
 
-      {/* Отображение дочерних задач (если задача открыта и у неё есть дочерние задачи) */}
       {isOpen && tasksTreeItems.length > 0 && (
         <ul>{renderTree(tasksTreeItems)}</ul>
       )}

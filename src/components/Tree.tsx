@@ -37,8 +37,6 @@ const Tree: React.FC<TreeProps> = ({ data }) => {
     )
   }
 
-  // Состояния для определения, открыты ли все уровни (true) или свернуты (false)
-
   const handlePrint = () => {
     window.print()
   }
