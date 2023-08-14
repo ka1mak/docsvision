@@ -5,7 +5,7 @@ const App = () => {
   const [treeData, setTreeData] = React.useState([])
 
   React.useEffect(() => {
-    fetch('')
+    fetch('./response.json')
       .then(res => res.json())
       .then(({ data }) => setTreeData(data.tasksTreeItems))
   }, [])
